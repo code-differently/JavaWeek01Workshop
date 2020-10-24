@@ -4,7 +4,7 @@ package com.codedifferently.part01;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Greetings {
+public class GreetingsPlayland {
     
     public static void main(String[] args) {
 
