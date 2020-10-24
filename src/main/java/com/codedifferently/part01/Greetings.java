@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Greetings {
+    
     public static void main(String[] args) {
 
         // Create Scanner object with reference name "scanner"
