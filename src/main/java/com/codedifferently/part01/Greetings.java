@@ -7,12 +7,17 @@ public class Greetings {
         System.out.println("Please write your name ...");
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next();
-        answer = normalizeString(answer);
-        if ((answer.equalsIgnoreCase("Hakim")) || (answer.equalsIgnoreCase("Rasheeda"))) {
-            System.out.printf("Hello, %s!%n", answer);
-        }
-        else {
-            System.out.println("I don't know you.");
+        
+        try {
+            answer = normalizeString(answer);
+            if ((answer.equalsIgnoreCase("Hakim")) || (answer.equalsIgnoreCase("Rasheeda"))) {
+                System.out.printf("Hello, %s!%n", answer);
+            }
+            else {
+                System.out.println("I don't know you.");
+            }
+        } catch(IllegalArgumentException iae) {
+            System.out.println("Error: " + iae.getMessage());
         }
     }
 
