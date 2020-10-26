@@ -17,7 +17,8 @@ public class Greetings {
                 System.out.println("I don't know you.");
             }
         } catch(IllegalArgumentException iae) {
-            System.out.println("Error: " + iae.getMessage());
+            System.out.println("Error: " + iae.getMessage() + " Exiting program...");
+            System.exit(1);
         }
         
         if (scanner != null)
