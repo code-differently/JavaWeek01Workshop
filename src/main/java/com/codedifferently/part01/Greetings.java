@@ -19,6 +19,9 @@ public class Greetings {
         } catch(IllegalArgumentException iae) {
             System.out.println("Error: " + iae.getMessage());
         }
+        
+        if (scanner != null)
+            scanner.close();
     }
 
     // Make sure the answer is valid
