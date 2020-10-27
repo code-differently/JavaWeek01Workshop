@@ -1,9 +1,12 @@
 package com.codedifferently.part02;
 
+import java.util.Scanner;
+
 public class TooHighTooLow {
 
     public static void main(String[] args) {
-        Game game = new Game(8);
-        Prompter prompter = new Prompter(game);
+        Prompter prompter = new Prompter(8);
+        
+        prompter.promptForGuess();
     }
 }
