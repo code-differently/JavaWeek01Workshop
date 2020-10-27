@@ -1,7 +1,5 @@
 package com.codedifferently.part02;
 
-import java.util.Scanner;
-
 public class TooHighTooLow {
 
     public static void main(String[] args) {
@@ -11,9 +9,9 @@ public class TooHighTooLow {
             System.out.println(getRandomNumber(0, 10));
             loopCount++;
         }
-        int number = getRandomNumber(0, 10);
+        int correctAnswer = getRandomNumber(0, 10);
         System.out.println("Number chosen!");
-        Prompter prompter = new Prompter(8);
+        Prompter prompter = new Prompter(correctAnswer);
         prompter.promptForGuess();
     }
     

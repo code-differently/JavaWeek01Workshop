@@ -20,9 +20,7 @@ public class Prompter {
             int guessedAnswer = normalizeInput(input);
             if (guessedAnswer == prevGuessedAnswer) {
                 System.out.println("You already made that guess on your last turn.");
-            }
-            prevGuessedAnswer = guessedAnswer;
-            if (guessedAnswer < correctAnswer) {
+            } else if (guessedAnswer < correctAnswer) {
                 System.out.println("That's too low. Try again ...");
             } else if (guessedAnswer > correctAnswer) {
                 System.out.println("That's too high. Try again ...");
@@ -30,6 +28,7 @@ public class Prompter {
                 System.out.println("That's right! You guessed the correct number. Congradulations!");
                 guessedCorrectAnswer = true;
             }
+            prevGuessedAnswer = guessedAnswer;
         } while (guessedCorrectAnswer == false);
         
         if (scanner != null)
