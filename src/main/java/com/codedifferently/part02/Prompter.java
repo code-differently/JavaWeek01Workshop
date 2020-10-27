@@ -3,24 +3,39 @@ package com.codedifferently.part02;
 import java.util.Scanner;
 
 public class Prompter {
-    private int answer;
+    private int correctAnswer;
+    private int prevGuessedAnswer;
     
     public Prompter(int answer) {
-        this.answer = answer;
+        this.correctAnswer = answer;
     }
     
     public void promptForGuess() {
         System.out.println("Guess a number between 1 and 10");
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
-        int guessedAnswer = normalizeInput(input);
-        if (guessedAnswer == answer) {
-            System.out.println("That's right! You guessed the correct number.");
-        } else if (guessedAnswer > answer) {
-            System.out.println("That's too high");
-        } else if (guessedAnswer < answer) {
-            System.out.println("That's too low");
-        }
+        
+        boolean guessedCorrectAnswer = false;
+        do {
+            String input = scanner.next();
+            int guessedAnswer = normalizeInput(input);
+            if (guessedAnswer == prevGuessedAnswer) {
+                System.out.println("You already made that guess on your last turn.");
+            }
+            prevGuessedAnswer = guessedAnswer;
+            if (guessedAnswer < correctAnswer) {
+                System.out.println("That's too low. Try again ...");
+            } else if (guessedAnswer > correctAnswer) {
+                System.out.println("That's too high. Try again ...");
+            } else if (guessedAnswer == correctAnswer) {
+                System.out.println("That's right! You guessed the correct number. Congradulations!");
+                guessedCorrectAnswer = true;
+            }
+        } while (guessedCorrectAnswer == false);
+        
+        if (scanner != null)
+            scanner.close();
+        
+        System.out.println("Exiting program ...");
     }
     
     private int normalizeInput(String input) {
