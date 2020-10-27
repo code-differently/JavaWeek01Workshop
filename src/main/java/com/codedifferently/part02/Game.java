@@ -11,7 +11,7 @@ public class Game {
     }
     
     public void promptForGuess() {
-        System.out.println("Guess a number between 1 and 10");
+        System.out.println("Guess a number between 0 and 10");
         Scanner scanner = new Scanner(System.in);
         
         boolean guessedCorrectAnswer = false;
