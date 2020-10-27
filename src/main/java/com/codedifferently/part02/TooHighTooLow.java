@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class TooHighTooLow {
 
     public static void main(String[] args) {
-        int a = 0;
-        while (a < 100) {
+        System.out.println("Calculating random number between 0 and 10 ...");
+        int loopCount = 0;
+        while (loopCount <= 100) {
             System.out.println(getRandomNumber(0, 10));
-            a++;
+            loopCount++;
         }
-        int answer = getRandomNumber(0, 10);
+        int number = getRandomNumber(0, 10);
+        System.out.println("Number chosen!");
         Prompter prompter = new Prompter(8);
-        
         prompter.promptForGuess();
     }
     
