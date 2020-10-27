@@ -2,11 +2,11 @@ package com.codedifferently.part02;
 
 import java.util.Scanner;
 
-public class Prompter {
+public class Game {
     private int correctAnswer;
     private int prevGuessedAnswer;
     
-    public Prompter(int answer) {
+    public Game(int answer) {
         this.correctAnswer = answer;
     }
     

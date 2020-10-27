@@ -11,8 +11,8 @@ public class TooHighTooLow {
         }
         int correctAnswer = getRandomNumber(0, 10);
         System.out.println("Number chosen!");
-        Prompter prompter = new Prompter(correctAnswer);
-        prompter.promptForGuess();
+        Game game = new Game(correctAnswer);
+        game.promptForGuess();
     }
     
     private static int getRandomNumber(int minNum, int maxNum) {
