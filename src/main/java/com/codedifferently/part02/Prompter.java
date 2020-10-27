@@ -36,6 +36,7 @@ public class Prompter {
             scanner.close();
         
         System.out.println("Exiting program ...");
+        System.exit(1);
     }
     
     private int normalizeInput(String input) {
